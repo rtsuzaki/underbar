@@ -222,10 +222,9 @@ return result;
           } else {
             return false;
           };
-        }, true);
+        });
     } else {
         return _.reduce(collection, function(memo, item) {
-          console.log(item);
           if ((memo) && iterator(item)) {
             return true;
           } else {
@@ -239,8 +238,21 @@ return result;
   // provided, provide a default one
   _.some = function(collection, iterator) {
     // TIP: There's a very clever way to re-use every() here.
-  };
-
+    var results = [];
+    _.each(collection, function(elem) {
+      results.push(iterator(elem));
+    });
+    // var isFalse = function(input) {
+    //   if (input === false){
+    //     return true;
+    //   }
+    // }
+    if (_.every(results) {
+      return false;
+    } else {
+      return true;
+    }
+  }
 
   /**
    * OBJECTS
