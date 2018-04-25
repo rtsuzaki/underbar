@@ -226,7 +226,7 @@ return result;
     } else {
         return _.reduce(collection, function(memo, item) {
           console.log(item);
-          if (iterator(memo) && iterator(item)) {
+          if ((memo) && iterator(item)) {
             return true;
           } else {
             return false
